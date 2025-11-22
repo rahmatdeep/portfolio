@@ -421,58 +421,60 @@ export default function App() {
                           ))}
                         </div>
 
-                        <button
-                          onClick={() => toggleExpanded(idx)}
-                          className="flex items-center gap-2 font-semibold text-sm md:text-base transition-all duration-300"
-                          style={{ color: theme.colors.accent.primary }}
-                        >
-                          {isExpanded ? (
-                            <>
-                              Hide Live Preview
-                              <IoChevronUp size={16} />
-                            </>
-                          ) : (
-                            <>
-                              View Live Preview
-                              <IoChevronDown size={16} />
-                            </>
-                          )}
-                        </button>
+                        {!isMobile && (
+                          <>
+                            <button
+                              onClick={() => toggleExpanded(idx)}
+                              className="flex items-center gap-2 font-semibold text-sm md:text-base transition-all duration-300"
+                              style={{ color: theme.colors.accent.primary }}
+                            >
+                              {isExpanded ? (
+                                <>
+                                  Hide Live Preview
+                                  <IoChevronUp size={16} />
+                                </>
+                              ) : (
+                                <>
+                                  View Live Preview
+                                  <IoChevronDown size={16} />
+                                </>
+                              )}
+                            </button>
+
+                            <div
+                              className="overflow-hidden transition-all duration-700 ease-in-out"
+                              style={{
+                                maxHeight: isExpanded ? "700px" : "0px",
+                              }}
+                            >
+                              <div className="px-5 pb-5 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:px-12">
+                                <div
+                                  className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl md:rounded-2xl overflow-hidden"
+                                  style={{
+                                    border: `2px solid ${theme.colors.border}`,
+                                    backgroundColor: theme.colors.background,
+                                  }}
+                                >
+                                  <iframe
+                                    src={isExpanded ? project.liveUrl : ""}
+                                    title={project.title}
+                                    className="w-full h-full"
+                                    loading="lazy"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
 
                       <div
-                        className="overflow-hidden transition-all duration-700 ease-in-out"
+                        className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none"
                         style={{
-                          maxHeight: isExpanded ? "700px" : "0px",
+                          opacity: isHovered ? 0.5 : 0,
+                          background: `radial-gradient(circle at 50% 50%, ${theme.colors.accent.primary}10, transparent 70%)`,
                         }}
-                      >
-                        <div className="px-5 pb-5 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:px-12">
-                          <div
-                            className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl md:rounded-2xl overflow-hidden"
-                            style={{
-                              border: `2px solid ${theme.colors.border}`,
-                              backgroundColor: theme.colors.background,
-                            }}
-                          >
-                            <iframe
-                              src={isExpanded ? project.liveUrl : ""}
-                              title={project.title}
-                              className="w-full h-full"
-                              loading="lazy"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      {!isMobile && (
-                        <div
-                          className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none"
-                          style={{
-                            opacity: isHovered ? 0.5 : 0,
-                            background: `radial-gradient(circle at 50% 50%, ${theme.colors.accent.primary}10, transparent 70%)`,
-                          }}
-                        />
-                      )}
+                      />
                     </div>
 
                     <div
@@ -531,18 +533,20 @@ export default function App() {
                   together.
                 </p>
 
-                <a
-                  href={`mailto:${content.personal.email}`}
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: theme.colors.accent.gradient,
-                    color: theme.colors.background,
-                    boxShadow: theme.effects.cardGlow,
-                  }}
-                >
-                  <IoMail size={22} />
-                  Send me an email
-                </a>
+                <div className="flex justify-center sm:justify-start">
+                  <a
+                    href={`mailto:${content.personal.email}`}
+                    className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 w-auto justify-center"
+                    style={{
+                      background: theme.colors.accent.gradient,
+                      color: theme.colors.background,
+                      boxShadow: theme.effects.cardGlow,
+                    }}
+                  >
+                    <IoMail size={22} />
+                    Send me an email
+                  </a>
+                </div>
               </div>
 
               {/* Right - Contact Info Cards */}
