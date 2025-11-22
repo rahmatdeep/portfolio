@@ -30,7 +30,7 @@ export const content = {
     email: "rahmatdeep@gmail.com",
     phone: "7777880055",
     github: "https://github.com/rahmatdeep",
-    twitter: "https://twitter.com/rahmatdeep",
+    twitter: "https://x.com/RahmatdeepSingh",
     resume:
       "https://drive.google.com/file/d/15Pfhp8PG6Ja6PM10YgfuxoIXNm_k44yz/view?usp=sharing",
   },
