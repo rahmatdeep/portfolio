@@ -116,7 +116,7 @@ export default function SimpleView() {
                   {category}
                 </span>
                 <span style={{ color: theme.simpleView.colors.muted }}>
-                  {skills.map((skill) => skill.name).join(" 路 ")}
+                  {skills.map((skill) => skill.name).join(" \u00b7 ")}
                 </span>
               </div>
             ))}
@@ -144,7 +144,9 @@ export default function SimpleView() {
             >
               Resume
             </a>
-            <span style={{ color: theme.simpleView.colors.border }}>路</span>
+            <span style={{ color: theme.simpleView.colors.border }}>
+              &middot;
+            </span>
             <a
               href={`mailto:${content.personal.email}`}
               className="transition-colors no-underline"
@@ -160,7 +162,9 @@ export default function SimpleView() {
             >
               Email
             </a>
-            <span style={{ color: theme.simpleView.colors.border }}>路</span>
+            <span style={{ color: theme.simpleView.colors.border }}>
+              &middot;
+            </span>
             <a
               href={content.personal.github}
               target="_blank"
@@ -178,7 +182,9 @@ export default function SimpleView() {
             >
               GitHub
             </a>
-            <span style={{ color: theme.simpleView.colors.border }}>路</span>
+            <span style={{ color: theme.simpleView.colors.border }}>
+              &middot;
+            </span>
             <a
               href={content.personal.twitter}
               target="_blank"
