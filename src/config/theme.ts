@@ -32,4 +32,18 @@ export const theme = {
     cardGlow: "0 0 40px rgba(255, 107, 107, 0.15)",
     cardGlowHover: "0 0 60px rgba(255, 107, 107, 0.3)",
   },
+
+  simpleView: {
+    colors: {
+      background: "#100f0f",
+      foreground: "#cecdc3",
+      muted: "#a19f91",
+      mutedMore: "#7a7970",
+      border: "#2a292780",
+      linkDimmed: "color-mix(in oklab, #cecdc3 40%, transparent)",
+    },
+    fonts: {
+      body: "Inter, Inter Fallback, ui-sans-serif, system-ui, sans-serif",
+    },
+  },
 };
