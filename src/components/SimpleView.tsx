@@ -131,6 +131,7 @@ export default function SimpleView() {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-[13px]">
             <a
               href={content.personal.resume}
+              target="_blank"
               className="transition-colors no-underline"
               style={{ color: theme.simpleView.colors.linkDimmed }}
               onMouseEnter={(e) =>
