@@ -75,6 +75,25 @@ export const content = {
 
   projects: [
     {
+      title: "Shadow Bot",
+      tagline: "AI-powered Meeting bot",
+      description:
+        "An AI meeting assistant that records meetings, generates transcripts, and creates structured summaries with semantic search.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Express.js",
+        "PostgreSQL",
+        "Prisma",
+        "Turborepo",
+        "Redis",
+        "Docker",
+        "LangChain",
+      ],
+      liveUrl: "https://shadow-bot.rahmatdeep.com",
+      githubUrl: "https://github.com/rahmatdeep/shadow-bot",
+    },
+    {
       title: "r8r",
       tagline: "Open-source workflow automation",
       description:
