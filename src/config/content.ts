@@ -32,7 +32,7 @@ export const content = {
     github: "https://github.com/rahmatdeep",
     twitter: "https://x.com/RahmatdeepSingh",
     resume:
-      "https://drive.google.com/file/d/15Pfhp8PG6Ja6PM10YgfuxoIXNm_k44yz/view?usp=sharing",
+      "https://drive.google.com/drive/folders/13s2VueDjWudbQSiYAcxdwjGs2bY0NCvP?usp=sharing",
   },
 
   skills: {
